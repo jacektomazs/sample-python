@@ -4,6 +4,13 @@ import socketserver
 
 from http import HTTPStatus
 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
